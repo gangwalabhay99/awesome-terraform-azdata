@@ -1,9 +1,11 @@
+# Create Azure Resource group
 resource "azurerm_resource_group" "DP-300_rg" {
     name = "${var.Resource_group}"
     location = "${var.location}"
     tags = "${var.Resource_group_tags}"
 }
 
+# Provision Azure SQL Server
 resource "azurerm_sql_server" "example" {
     depends_on = ["azurerm_resource_group.DP-300_rg"]
     name = "${var.azsqlserver_name}"
@@ -18,6 +20,7 @@ resource "azurerm_sql_server" "example" {
     }
 }
 
+# Provision Azuere SQL database
 resource "azurerm_sql_database" "example" {
     depends_on = [azurerm_sql_server.example]
     name = "${var.azsqlserverdb-name}"
