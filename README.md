@@ -6,6 +6,8 @@ Pre-requisites : Terraform 0.12+
 
 The Repo contains the following Azure resources for infrastructure provisioning : 
 
+Azure Key Vault
+
 Azure SQL database
 
 Azure SQL datawarehouse
