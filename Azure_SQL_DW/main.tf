@@ -13,7 +13,7 @@ resource "azurerm_sql_server" "example" {
     location = "${var.azsqlserver-location}"
     version = "12.0"
     administrator_login = "${var.azsqlserver-login}"
-    administrator_login_password = "${var.azsqlserver-login-password}"
+    administrator_login_password = azurerm_key_vault_secret.example.value
 
     tags = {
         environment = "dev"
